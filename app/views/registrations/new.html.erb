@@ -1,0 +1,16 @@
+<%= form_with data: {controller: "registration", action: "ajax:beforeSend->registration#submit"} do |form| %>
+  <h4 class="text-center mb-2">REGISTAION FORM</h4>
+  <div class="mb-2 space-x-5">
+    <%= form.label :name, class:"text-black"%>:
+    <%= form.text_field :name, class:"border-2 border-black", data: {target: 'registration.name'}%>
+  </div>
+  <div class="mb-2">
+    <%= form.label :email, class:"text-black"%>:
+    <%= form.text_field :email, class:"border-2 border-black", data: {target: 'registration.email'}%>
+  </div>
+  <div class="mb-2">
+    <%= form.label :password, class:"text-black"%>:
+    <%= form.password_field :password, class:"border-2 border-black", data: {target: 'registration.password'}%>
+  </div>
+  <%= form.submit 'Submit'%>
+<% end %>
